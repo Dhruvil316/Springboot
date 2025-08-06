@@ -40,6 +40,7 @@ public class LearnSpringbootAppApplication implements CommandLineRunner {
 //	CommandLineRunner gives us method which runs after everything is built
 	@Override
 	public void run(String... args) throws Exception {
+//		heu
 		String pay = payementService.pay() ;
 		System.out.println(pay) ;
 	}
