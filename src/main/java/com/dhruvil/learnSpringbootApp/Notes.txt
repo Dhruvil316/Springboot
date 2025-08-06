@@ -1,0 +1,21 @@
+@ConditionalOnProperty is used to conditionally register a Spring bean based on a property in the
+application.properties (or .yml) file.
+
+This is where you control which bean gets loaded, without touching the Java code.
+
+What happens if you misconfigure?
+Say you write:
+
+@Autowired
+@Qualifier("razorpay")
+But in your application.properties you have:
+
+payment.provider=stripe
+Then you will get this error:
+
+No qualifying bean of name 'razorpay' available
+Because the razorpay bean was never registered due to the condition not matching.
+
+---------------------------------------------------------------------------------------------------------------------
+What happens when spring boot project is run !
+
