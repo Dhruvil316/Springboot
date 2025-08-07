@@ -1,21 +1,17 @@
-@ConditionalOnProperty is used to conditionally register a Spring bean based on a property in the
-application.properties (or .yml) file.
+Before interview learn the Spring MVC flow !
 
-This is where you control which bean gets loaded, without touching the Java code.
+3 layer architecture
+- presentation layer ( controller )
+- services layer ( contains business logic )
+- persistence layer ( data access , talk to database  )
 
-What happens if you misconfigure?
-Say you write:
+advantage ->
+- separation of concern
+- entity / schema remains hide
 
-@Autowired
-@Qualifier("razorpay")
-But in your application.properties you have:
+How the things are working :-
+postman -> tomcat -> dispatcher servlet -> HandlerMapping -> Handler of controller -> Controller hanlders returns POJO
 
-payment.provider=stripe
-Then you will get this error:
+POJO -> plain old java object
 
-No qualifying bean of name 'razorpay' available
-Because the razorpay bean was never registered due to the condition not matching.
-
----------------------------------------------------------------------------------------------------------------------
-What happens when spring boot project is run !
-
+HttpMessageConverter ( POJO -> JSON ) -> dispatcher servlet writes to HttpServletResponse
