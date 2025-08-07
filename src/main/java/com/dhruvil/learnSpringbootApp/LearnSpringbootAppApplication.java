@@ -8,8 +8,8 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 
 //the component scanning starts from here
-//spring are the java objects that are manage by spring container
-//Constructor dependency injection does not require the @Autowired
+//beans are the java objects that are manage by spring container
+//Constructor dependency injection does not require the @Autowired for single constructor
 
 @SpringBootApplication
 public class LearnSpringbootAppApplication implements CommandLineRunner {
@@ -40,7 +40,6 @@ public class LearnSpringbootAppApplication implements CommandLineRunner {
 //	CommandLineRunner gives us method which runs after everything is built
 	@Override
 	public void run(String... args) throws Exception {
-//		heu
 		String pay = payementService.pay() ;
 		System.out.println(pay) ;
 	}

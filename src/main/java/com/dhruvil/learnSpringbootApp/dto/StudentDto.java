@@ -2,6 +2,8 @@ package com.dhruvil.learnSpringbootApp.dto;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
+import lombok.Getter;
+import lombok.Setter;
 
 @Data
 public class StudentDto {
@@ -17,7 +19,6 @@ public class StudentDto {
         this.name = name;
         this.email = email;
     }
-//
-//    public StudentDto() {
-//    }
+
+
 }
