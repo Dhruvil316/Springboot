@@ -3,6 +3,8 @@ package com.dhruvil.learnSpringbootApp.controller;
 import com.dhruvil.learnSpringbootApp.dto.StudentDto;
 import com.dhruvil.learnSpringbootApp.entity.Student;
 import com.dhruvil.learnSpringbootApp.respository.StudentRepo;
+import com.dhruvil.learnSpringbootApp.service.StudentService;
+import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -14,19 +16,16 @@ import java.util.List;
 // The row mapper is of JDBC layer -> converts the query results
 
 @RestController
+@RequiredArgsConstructor
 public class StudentController {
 
-    private final StudentRepo studentRepo ;
+    private final StudentService studentService ;
 
-    @Autowired
-    public StudentController ( StudentRepo studentRepo ) {
-        this.studentRepo = studentRepo ;
-    }
 
     @GetMapping("/student")
-    public List<Student> getStudent () {
+    public List<StudentDto> getStudent () {
 //        this java object gets converted into json by HttpMessageConverter
-        return studentRepo.findAll() ;
+        return studentService.getAllStudents() ;
     }
 
 }

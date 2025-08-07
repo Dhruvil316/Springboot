@@ -1,3 +1,5 @@
+CODE FORMATING : options + cmd + L
+
 Before interview learn the Spring MVC flow !
 
 3 layer architecture

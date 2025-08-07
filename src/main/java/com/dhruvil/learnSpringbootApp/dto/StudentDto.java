@@ -12,7 +12,7 @@ public class StudentDto {
     private String email ;
 
 
-//    if I dont want to write this code of getters setters and constructor : use @Data of lombok , it will create
+//    if I don't want to write this code of getters setters and constructor : use @Data of lombok , it will create
 //    automatically during .class file in byte code
     public StudentDto(long id, String name, String email) {
         this.id = id;
