@@ -41,6 +41,7 @@ public class LearnSpringbootAppApplication implements CommandLineRunner {
 	@Override
 	public void run(String... args) throws Exception {
 		String pay = payementService.pay() ;
-		System.out.println(pay) ;
+//		System.out.println(pay) ;
+		System.out.println(pay);
 	}
 }

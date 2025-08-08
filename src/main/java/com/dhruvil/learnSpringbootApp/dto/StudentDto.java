@@ -1,11 +1,11 @@
 package com.dhruvil.learnSpringbootApp.dto;
 
-import lombok.AllArgsConstructor;
-import lombok.Data;
-import lombok.Getter;
-import lombok.Setter;
+import lombok.*;
 
 @Data
+@Getter
+@Setter
+@NoArgsConstructor // required for the model mapper
 public class StudentDto {
     private long id ;
     private String name ;
